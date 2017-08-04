@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 
 var articles={
-        articleOne:{
+        'article-one':{
             title:'Article-One | Mohsin Khan',
             heading :'Article-One',
             date: '3rd Aug 2017',
@@ -19,7 +19,7 @@ var articles={
                             I am currently working in Apigee. I am very proficient in OOPS, Data Structure, Java, MySql and also good at JavaScript, Bootstrap.
                         </p>`
         },
-        articleTwo:{
+        'article-two':{
             title:'Article-Two| Mohsin Khan',
             heading :'Article-Two',
             date: '3rd Aug 2017',
@@ -28,7 +28,7 @@ var articles={
                             I am Software Engineer at Persistent Systems Limited from last 1.11 years, ultimately gaining experience in software development and deployment. As Developer, my responsibility is to understand the requirement and delivered the same efficiently.
                         </p>`
         },
-        articleThree:{
+        'article-three':{
             title:'Article-Three | Mohsin Khan',
             heading :'Article-Three',
             date: '3rd Aug 2017',
@@ -40,7 +40,7 @@ var articles={
                             I am currently working in Apigee. I am very proficient in OOPS, Data Structure, Java, MySql and also good at JavaScript, Bootstrap.
                         </p>`
         }
-}
+};
 
 
 function createTemplate(data){
@@ -84,7 +84,10 @@ app.get('/', function (req, res) {
 
 app.get('/:articleName', function (req, res) {
     //articleName==articleOne
-  res.sendFile(createTemplate(articleOne));
+    //articles[articleName] ={} content object for articleOne
+
+  var articleName= req.params.articleName;  //extract the name functionality provided by express    
+  res.sendFile(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {
