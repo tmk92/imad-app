@@ -87,7 +87,7 @@ app.get('/:articleName', function (req, res) {
     //articles[articleName] ={} content object for articleOne
 
   var articleName= req.params.articleName;  //extract the name functionality provided by express    
-  res.sendFile(createTemplate(articles[articleName]));
+  res.send(createTemplate(articles[articleName]));
 });
 
 
