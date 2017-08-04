@@ -5,18 +5,42 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne={
-    title:'Article-One | Mohsin Khan',
-    heading :'Article-One',
-    date: '3rd Aug 2017',
-    content:`
-                <p>
-                    I am Software Engineer at Persistent Systems Limited from last 1.11 years, ultimately gaining experience in software development and deployment. As Developer, my responsibility is to understand the requirement and delivered the same efficiently.
-                </p>
-                <p>
-                    I am currently working in Apigee. I am very proficient in OOPS, Data Structure, Java, MySql and also good at JavaScript, Bootstrap.
-                </p>`
-};
+
+var articles={
+        articleOne:{
+            title:'Article-One | Mohsin Khan',
+            heading :'Article-One',
+            date: '3rd Aug 2017',
+            content:`
+                        <p>
+                            I am Software Engineer at Persistent Systems Limited from last 1.11 years, ultimately gaining experience in software development and deployment. As Developer, my responsibility is to understand the requirement and delivered the same efficiently.
+                        </p>
+                        <p>
+                            I am currently working in Apigee. I am very proficient in OOPS, Data Structure, Java, MySql and also good at JavaScript, Bootstrap.
+                        </p>`
+        },
+        articleTwo:{
+            title:'Article-Two| Mohsin Khan',
+            heading :'Article-Two',
+            date: '3rd Aug 2017',
+            content:`
+                        <p>
+                            I am Software Engineer at Persistent Systems Limited from last 1.11 years, ultimately gaining experience in software development and deployment. As Developer, my responsibility is to understand the requirement and delivered the same efficiently.
+                        </p>`
+        },
+        articleThree:{
+            title:'Article-Three | Mohsin Khan',
+            heading :'Article-Three',
+            date: '3rd Aug 2017',
+            content:`
+                        <p>
+                            I am Software Engineer at Persistent Systems Limited from last 1.11 years, ultimately gaining experience in software development and deployment. As Developer, my responsibility is to understand the requirement and delivered the same efficiently.
+                        </p>
+                        <p>
+                            I am currently working in Apigee. I am very proficient in OOPS, Data Structure, Java, MySql and also good at JavaScript, Bootstrap.
+                        </p>`
+        }
+}
 
 
 function createTemplate(data){
