@@ -98,6 +98,7 @@ app.get('/counter', function (req, res) {
     
 });
 
+//Query param parameter used to pass name 
 var names =[];
 app.get('/submit-name', function (req, res) {   //submit-name?name=xyz
   //Get the name from req obj
