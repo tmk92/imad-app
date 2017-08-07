@@ -99,7 +99,7 @@ app.get('/counter', function (req, res) {
 });
 
 var names =[];
-app.get('/submit-name/:name', function (req, res) {
+app.get('/submit-name/', function (req, res) {   //submit-name?name
   //Get the name from req obj
   var name=req.params.name;
   
@@ -107,6 +107,17 @@ app.get('/submit-name/:name', function (req, res) {
   //JSON : JavaScript Object Notation
   res.send(JSON.stringify(names)); //This will convert the array into string 
 });
+
+//Path param parameter used to pass name 
+/*var names =[];
+app.get('/submit-name/:name', function (req, res) {  // submit-name/name
+  //Get the name from req obj
+  var name=req.params.name;
+  
+  names.push(name);
+  //JSON : JavaScript Object Notation
+  res.send(JSON.stringify(names)); //This will convert the array into string 
+});*/
 
 
 app.get('/ui/style.css', function (req, res) {
