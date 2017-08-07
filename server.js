@@ -69,7 +69,11 @@ function createTemplate(data){
                     <div>
                         ${content}
                     </div>
+                    <br><hr/>
+                    <input id="name" type="text" placeholder="name"/>
+                    <input id="submit-btn" type="submit" value="Submit"/>
                     
+                        <ol id="ul_list"> </ol>   
                 </div>
                 
             </body>
