@@ -16,7 +16,7 @@ img.onclick=function() {
 };*/
 
 //counter code
-var button= docunment.getElementById("counter");
+var button= docunment.getElementById('counter');
 var counter= 0; 
 button.onclick= function(){
     //Make a request to coounter endpoint 
@@ -25,6 +25,6 @@ button.onclick= function(){
     
     //Render the  variable  in correct span
      counter= counter + 1;
-     var span =docunment.getElementById("count");
+     var span =docunment.getElementById('count');
      span.innerHTML = counter.toString();
 };
