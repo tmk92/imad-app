@@ -93,8 +93,7 @@ app.get('/:articleName', function (req, res) {
     //articleName==articleOne
     //articles[articleName] ={} content object for articleOne
 var comment=req.query.comment;
-  comment.push(comment);
-  res.send(JSON.stringify(comment));
+  
   var articleName= req.params.articleName;  //extract the name functionality provided by express    
   res.send(createTemplate(articles[articleName]));
   
