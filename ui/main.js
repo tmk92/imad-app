@@ -49,10 +49,9 @@ button.onclick= function(){
 
 
 ///Submit Name
-var nameInput =document.getElementById('name');
-var name= nameInput.value;
 var submit =document.getElementById('submit-btn');
 submit.onclick= function(){
+    
     //Make a request to a server and send the name
      //Create a request to counter endpoint 
     var request = new XMLHttpRequest();
@@ -78,6 +77,8 @@ submit.onclick= function(){
         }        
     };
      //Make a request to coounter endpoint 
+    var nameInput =document.getElementById('name');
+    var name= nameInput.value;
     request.open('GET','http://khanmohsin3011.imad.hasura-app.io/submit-name?name='+name,true);
     request.send(null);
     
