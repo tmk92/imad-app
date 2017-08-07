@@ -26,7 +26,9 @@ button.onclick= function(){
     request.onreadystatechange = function(){
         if(request.readystate == XMLHttpRequest.DONE){
             //Take some action
+            alert("hello ");
             if(request.status == 200){
+                alert("hello 0");
                 var counter =request.responceText;
                 alert("hello 1");
                 var span =document.getElementById('count');
