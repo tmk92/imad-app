@@ -113,9 +113,9 @@ submit.onclick= function(){
         }        
     };
      //Make a request to coounter endpoint 
-    var nameInput =document.getElementById('comment');
-    var comment= nameInput.value;
-    request.open('GET','http://khanmohsin3011.imad.hasura-app.io/submit-name?name='+name,true);
+    var commentInput =document.getElementById('comment');
+    var comment= commentInput.value;
+    request.open('GET','http://khanmohsin3011.imad.hasura-app.io/submit-name?name='+comment,true);
     request.send(null);
     
 };
