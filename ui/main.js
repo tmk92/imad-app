@@ -27,14 +27,10 @@ button.onclick= function(){
         
         if(request.readyState === XMLHttpRequest.DONE) {
             //Take some action
-            alert("hello ");
             if(request.status === 200) {
-                alert("hello 0");
-                var counter =request.responceText;
-                alert("hello 1");
-                var span =document.getElementById('count');
-                alert("hello 2");
-                span.innerHTML = counter.toString();
+               var counter =request.responceText;
+               var span =document.getElementById('count');
+               span.innerHTML = counter.toString();
                 alert("hello 3");
             }
         }        
