@@ -68,9 +68,9 @@ submit.onclick= function(){
     }
     ul.innerHTML= list;
     
-    var ul=document.getElementById('ul_list');
+    /*var ul=document.getElementById('ul_list');
     ul.innerHTML= list;
-    
+    */
 };
 
 
