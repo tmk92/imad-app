@@ -21,7 +21,7 @@ var button= document.getElementById('counter');
 button.onclick= function(){
     //Create a request to counter endpoint 
     var request = new XMLHttpRequest();
-    
+    alert("hello");
     //Capture the res and store  it in a variable
     request.onreadystatechange = function(){
         if(request.readystate == XMLHttpRequest.DONE){
