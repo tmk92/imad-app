@@ -95,6 +95,9 @@ app.get('/:articleName', function (req, res) {
 
   var articleName= req.params.articleName;  //extract the name functionality provided by express    
   res.send(createTemplate(articles[articleName]));
+  var comment=req.query.comment;
+  comment.push(comment);
+  res.send(JSON.stringify(comment));
 });
 
 
