@@ -115,7 +115,7 @@ submit.onclick= function(){
      //Make a request to coounter endpoint 
     var commentInput =document.getElementById('comment');
     var comment= commentInput.value;
-    request.open('GET','http://khanmohsin3011.imad.hasura-app.io/submit-name?name='+comment,true);
+    request.open('GET','http://khanmohsin3011.imad.hasura-app.io/article-one?comment='+comment,true);
     request.send(null);
     
 };
