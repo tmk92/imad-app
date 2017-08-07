@@ -35,6 +35,7 @@ button.onclick= function(){
                 var span =document.getElementById('count');
                 alert("hello 2");
                 span.innerHTML = counter.toString();
+                alert("hello 3");
             }
         }        
     };
