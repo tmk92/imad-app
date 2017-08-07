@@ -24,11 +24,11 @@ button.onclick= function(){
     
     //Capture the res and store  it in a variable
     request.onreadystatechange = function(){
-        alert("he ");
-        if(request.readystate === XMLHttpRequest.DONE){
+        
+        if(request.readystate == XMLHttpRequest.DONE){
             //Take some action
             alert("hello ");
-            if(request.status === 200){
+            if(request.status == 200){
                 alert("hello 0");
                 var counter =request.responceText;
                 alert("hello 1");
