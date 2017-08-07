@@ -21,14 +21,16 @@ var button= document.getElementById('counter');
 button.onclick= function(){
     //Create a request to counter endpoint 
     var request = new XMLHttpRequest();
-    alert("hello");
+    
     //Capture the res and store  it in a variable
     request.onreadystatechange = function(){
         if(request.readystate == XMLHttpRequest.DONE){
             //Take some action
             if(request.status == 200){
                 var counter =request.responceText;
+                alert("hello 1");
                 var span =document.getElementById('count');
+                alert("hello 2");
                 span.innerHTML = counter.toString();
             }
         }        
