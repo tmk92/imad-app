@@ -45,3 +45,31 @@ button.onclick= function(){
      var span =document.getElementById('count');
      span.innerHTML = counter.toString();*/
 };
+
+
+
+///Submit Name
+var nameInput =document.getElementById('name');
+var name= nameInput.value;
+var submit =document.getElementById('submit-btn');
+submit.onclick= function(){
+    //Make a request to a server and send the name
+    
+    
+    //Capture the list of name and render the list
+    var names = ['Name 1','Name 2','Name 3'];
+    var list='';
+    for(var i=0; i< names.length; i++){
+        list= '<li>'+names[i]+'<li>';
+    }
+    var ul=document.getElementById('ul_list');
+    ul.innerHTML=list;
+    
+};
+
+
+
+
+
+
+
