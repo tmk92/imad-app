@@ -18,6 +18,9 @@ var articles={
                         <p>
                             I am currently working in Apigee. I am very proficient in OOPS, Data Structure, Java, MySql and also good at JavaScript, Bootstrap.
                         </p>`
+                        
+                        
+                        
         },
         'article-two':{
             title:'Article-Two| Mohsin Khan',
@@ -70,10 +73,11 @@ function createTemplate(data){
                         ${content}
                     </div>
                     <br><hr/>
-                    <input id="name" type="text" placeholder="name"/>
-                    <input id="submit-btn" type="submit" value="Submit"/>
                     
-                        <ol id="ul_list"> </ol>   
+                    <textarea id="comment" type="text" placeholder="Comment" rows="4" cols="50"></textarea>
+                    <input id="submit-comment" type="submit" value="Submit"/>
+                    
+                        <ol id="commentList"> </ol>   
                 </div>
                 
             </body>
