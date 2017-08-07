@@ -58,19 +58,15 @@ submit.onclick= function(){
     
     //Capture the list of name and render the list
     var names = ['Name1', 'Name2', 'Name3', 'Name4'];
-    
-    var ul=document.getElementById('demo');
-    ul.innerHTML= names;
-    
     var list='';
+    
     for(var i=0; i< names.length; i++){
-        list= '<li>' +names[i]+ '<li>';
+        list += '<li>' +names[i]+ '<li>';
     }
+    
+    var ul= document.getElementById('ul_list');
     ul.innerHTML= list;
     
-    /*var ul=document.getElementById('ul_list');
-    ul.innerHTML= list;
-    */
 };
 
 
