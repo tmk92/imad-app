@@ -112,7 +112,7 @@ submit.onclick= function(){
             }
         }        
     };
-     //Make a request to coounter endpoint 
+     //Make a request to counter endpoint 
     var commentInput =document.getElementById('comment');
     var comment= commentInput.value;
     request.open('GET','http://khanmohsin3011.imad.hasura-app.io/article-one?comment='+comment,true);
