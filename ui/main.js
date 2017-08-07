@@ -16,7 +16,7 @@ img.onclick=function() {
 };*/
 
 //counter code
-var button= document.getElementById("counter");
+var button= document.getElementById('counter');
 counter= 0;
 button.onclick= function(){
     //Create a request to counter endpoint 
