@@ -98,6 +98,17 @@ app.get('/counter', function (req, res) {
     
 });
 
+var names =[];
+app.get('/submit-name/:name', function (req, res) {
+  //Get the name from req obj
+  var name=req.params.name;
+  
+  names.push(name);
+  //JSON : JavaScript Object Notation
+  res.send(JSON.stringify(names)); //This will convert the array into string 
+});
+
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
