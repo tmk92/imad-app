@@ -76,7 +76,7 @@ function createTemplate(data){
                     <textarea id="comment" type="text" placeholder="Comment" rows="4" cols="50"></textarea>
                     <input id="submit-comment" type="submit" value="Submit"/>
                     
-                        <ol id="commentList"> </ol>   
+                    <ol id="commentList"> </ol>   
                 </div>
                 
             </body>
