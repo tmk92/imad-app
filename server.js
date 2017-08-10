@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var pool = require('pg').Pool;
+var Pool = require('pg').Pool;
 var congif={
     user:'khanmohsin3011',
     databases: 'khanmohsin3011',
