@@ -95,14 +95,28 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articleName', function (req, res) {
+app.get('/articles/:articleName', function (req, res) {
     //articleName==articleOne
     //articles[articleName] ={} content object for articleOne
-var comment=req.query.comment;
-  
-  var articleName= req.params.articleName;  //extract the name functionality provided by express    
+  /*var articleName= req.params.articleName;  //extract the name functionality provided by express    
+  /:articleName
   res.send(createTemplate(articles[articleName]));
+  res.send(createTemplate(articleData));
+  */
   
+  pool.query('SELECT * FROM user WHERE title ='+ req.params.articleName,function (err, result) {
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            if(result.rows.lenght === 0){
+                res.ststus(404).send("Article-One not Found");
+            }
+            else{
+                var articleData=result.rows[0];
+                res.send(createTemplate(articleData));
+            }
+        }
+      });
 });
 
 
