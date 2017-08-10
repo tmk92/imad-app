@@ -14,7 +14,7 @@ var congif={
     password: process.env.DB_PASSWORD
 };
 
-var articles={
+/*var articles={
         'article-one':{
             title:'Article-One | Mohsin Khan',
             heading :'Article-One',
@@ -51,7 +51,7 @@ var articles={
                             I am currently working in Apigee. I am very proficient in OOPS, Data Structure, Java, MySql and also good at JavaScript, Bootstrap.
                         </p>`
         }
-};
+};*/
 function createTemplate(data){
     var title=data.title;
     var heading=data.heading;
@@ -103,8 +103,8 @@ app.get('/articles/:articleName', function (req, res) {
   res.send(createTemplate(articles[articleName]));
   res.send(createTemplate(articleData));
   */
-  
-  pool.query("SELECT * FROM user WHERE title ='"+ req.params.articleName + "'",function (err, result) {
+  //SQL Injection FLAW-->pool.query("SELECT * FROM user WHERE title ='"+ req.params.articleName + "'",function (err, result)
+  pool.query("SELECT * FROM user WHERE title = $1", [req.params.articleName], function (err, result) {
         if(err){
             res.status(500).send(err.toString());
         }else{
