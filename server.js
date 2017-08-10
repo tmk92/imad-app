@@ -5,6 +5,14 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var pool = require('pg').Pool;
+var congif={
+    user:'khanmohsin3011',
+    databases: 'khanmohsin3011',
+    host: 'db.imad.hasura-app.io',
+    port: '5432',
+    password: process.env.DB_PASSWORD
+};
 
 var articles={
         'article-one':{
@@ -44,8 +52,6 @@ var articles={
                         </p>`
         }
 };
-
-
 function createTemplate(data){
     var title=data.title;
     var heading=data.heading;
@@ -129,7 +135,21 @@ app.get('/submit-name/:name', function (req, res) {  // submit-name/name
   res.send(JSON.stringify(names)); //This will convert the array into string 
 });*/
 
-
+//Connect to database
+var pool= new Pool(config);
+app.get('/test-db', function (req, res) {
+    //Make a select request
+    //retun a response with the result
+    pool.query('SELECT * FROM user', function (req, res) {
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send(JSON.stringfy(result));
+        }
+        
+    });
+});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
