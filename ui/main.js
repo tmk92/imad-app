@@ -122,7 +122,39 @@ submit.onclick= function(){
 
 
 //Submit username/password to  login 
-
+var submit =document.getElementById('submit_btn');
+submit.onclick= function(){
+    
+    //Make a request to a server and send the name
+         var request = new XMLHttpRequest();
+    
+    //Capture the res and store  it in a variable
+    request.onreadystatechange = function(){
+        
+        if(request.readyState === XMLHttpRequest.DONE) {
+            //Take some action
+            if(request.status === 200) {
+                //Capture the list of name and render the list
+                console.log('user is logged in');
+                alert("Login Sucessfully");
+            }
+            else if(request.status === 403){
+               alert("username/password was incorrect");
+            }
+            else if(request.status === 500){
+               alert("something went wrong");
+            }
+        }        
+    };
+     //Make a request to coounter endpoint 
+    var username =document.getElementById('username').value;
+    var password=document.getElementById('pwd').value;
+    console.log(username);
+    console.log(password);
+    request.open('POST','http://khanmohsin3011.imad.hasura-app.io/login',true);
+    request.send(JSON.stringfy({username: username, password: password}));
+    
+};
 
 
 
