@@ -6,6 +6,8 @@ var app = express();
 app.use(morgan('combined'));
 
 var Pool = require('pg').Pool;
+var crypto=require('crypto');
+
 var config={
     user:'khanmohsin3011',
     databases: 'khanmohsin3011',
@@ -164,6 +166,20 @@ app.get('/test-db', function (req, res) {
         
     });
 });
+
+function hash(input, salt){
+    //how to we create a hash..?
+    var hashed= crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
+    return hashed.toString('hex');  // Make hash into readable
+    
+}
+
+app.get('/hash/:input', function (req, res) {
+  var hashingString = hash(req.param.input, 'this-is-some-random-string');
+  res.send(hashingString);
+  
+});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
