@@ -1,5 +1,5 @@
-/*console.log('Loaded!');
-
+console.log('Loaded!');
+/*
 //change the text of main-text div
 var element=document.getElementById("main-text");
 element.innerHTML="NewValue";
@@ -13,7 +13,7 @@ function moveRight(){
 }
 img.onclick=function() {
     var interval = setInterval(moveRight, 50);
-};*/
+};
 
 //counter code
 var button= document.getElementById('counter');
@@ -41,9 +41,9 @@ button.onclick= function(){
     request.send(null);
   
     //Render the  variable  in correct span
-   /*  counter= counter + 1;
+    counter= counter + 1;
      var span =document.getElementById('count');
-     span.innerHTML = counter.toString();*/
+     span.innerHTML = counter.toString();
 };
 
 
@@ -119,8 +119,7 @@ submit.onclick= function(){
     request.send(null);
     
 };
-
-
+*/
 //Submit username/password to  login 
 var submit =document.getElementById('submit_btn');
 submit.onclick= function(){
