@@ -152,7 +152,8 @@ submit.onclick= function(){
     console.log(username);
     console.log(password);
     request.open('POST','http://khanmohsin3011.imad.hasura-app.io/login',true);
-    request.send(JSON.stringfy({username: username, password: password}));
+    request.setRequestHeader('Content-Type','application/json');
+    request.send(JSON.stringify({username: username, password: password}));
     
 };
 
