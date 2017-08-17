@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var Pool = require('pg').Pool;
-var congif={
+var config={
     user:'khanmohsin3011',
     databases: 'khanmohsin3011',
     host: 'db.imad.hasura-app.io',
