@@ -2,19 +2,23 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-var app = express();
-app.use(morgan('combined'));
+var Pool = require('pg').Pool;  // to connect to db
+var crypto=require('crypto');   // to encrypt the pwd
+var bodyParser=require('body-parser'); //to understand the body is in JSON format
 
-var Pool = require('pg').Pool;
-var crypto=require('crypto');
-
-var config={
+var config={                            // configuration of db
     user:'khanmohsin3011',
     databases: 'khanmohsin3011',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
 };
+
+
+var app = express();
+app.use(morgan('combined'));
+app.use(bodyParser.json());
+
 
 /*var articles={
         'article-one':{
@@ -156,12 +160,12 @@ var pool= new Pool(config);
 app.get('/test-db', function (req, res) {
     //Make a select request
     //retun a response with the result
-    pool.query('SELECT * FROM user', function (req, res) {
+    pool.query('SELECT * FROM article', function (err, res) {
         if(err){
             res.status(500).send(err.toString());
         }
         else{
-            res.send(JSON.stringfy(result.rows));
+            res.send(JSON.stringfy(res.rows));
         }
         
     });
@@ -179,6 +183,27 @@ app.get('/hash/:input', function (req, res) {
   res.send(hashingString);
   
 });
+
+
+app.post('/create-user', function (req, res) {
+  //username ,password
+  var username= req.body.username;
+  var password= req.body.password;
+  var salt= crypto.getRandomBytes(128).toString('hex');
+  var dbString = hash(password, salt);
+  
+  pool.query('INSERT into "user" (username,password) VALUES ($1, $2)',[username, dbString], function (err, result) {
+        if(err){
+            result.status(500).send(err.toString());
+        }
+        else{
+            result.send('User successfully created:' +username);
+        }
+        
+    });
+  
+});
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
