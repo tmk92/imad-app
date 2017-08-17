@@ -36,7 +36,7 @@ button.onclick= function(){
         }        
     };
     
-    //Make a request to coounter endpoint 
+    //Make a request to counter endpoint 
     request.open('GET','http://khanmohsin3011.imad.hasura-app.io/counter',true);
     request.send(null);
   
@@ -84,7 +84,7 @@ submit.onclick= function(){
     
 };
 
-///Submit Name
+//Submit comment
 var submit =document.getElementById('submit-comment');
 submit.onclick= function(){
     
@@ -119,6 +119,10 @@ submit.onclick= function(){
     request.send(null);
     
 };
+
+
+//Submit username/password to  login 
+
 
 
 
