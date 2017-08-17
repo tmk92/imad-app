@@ -148,7 +148,7 @@ submit.onclick= function(){
     };
      //Make a request to coounter endpoint 
     var username =document.getElementById('username').value;
-    var password=document.getElementById('pwd').value;
+    var password=document.getElementById('password').value;
     console.log(username);
     console.log(password);
     request.open('POST','http://khanmohsin3011.imad.hasura-app.io/login',true);
