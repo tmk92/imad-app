@@ -3,8 +3,9 @@ var morgan = require('morgan');
 var path = require('path');
 
 var Pool = require('pg').Pool;  // to connect to db
-var crypto=require('crypto');   // to encrypt the pwd
-var bodyParser=require('body-parser'); //to understand the body is in JSON format
+var crypto= require('crypto');   // to encrypt the pwd
+var bodyParser= require('body-parser'); //to understand the body is in JSON 
+var session= require('express-session');    //to maintain session of perticular user 
 
 var config={                            // configuration of db
     user:'khanmohsin3011',
@@ -17,7 +18,11 @@ var config={                            // configuration of db
 
 var app = express();
 app.use(morgan('combined'));
-app.use(bodyParser.json());
+app.use(bodyParser.json
+app.use(session({
+    secret: 'someRandomSecretValue',
+    cookie: {maxAge :1000 *60 *60*24*30}
+}));
 
 
 /*var articles={
@@ -223,7 +228,10 @@ app.post('/login', function (req, res) {
                 var salt= dbString.split('$')[2];
                 var hashedPassword= hash(password, salt); //Creating the hash based on the password submitted  and the original salt 
                 if(hashedPassword === dbString ){
-                    res.send('Credentials are correct');    
+                    res.send('Credentials are correct');   
+                    
+                    //SET a session
+                    
                 }
                 else{
                     res.send(403).send('username/password is invalid');
