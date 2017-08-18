@@ -6,7 +6,6 @@ var Pool = require('pg').Pool;  // to connect to db
 var crypto= require('crypto');   // to encrypt the pwd
 var bodyParser= require('body-parser'); //to understand the body is in JSON 
 var session= require('express-session');    //to maintain session of perticular user 
-
 var config={                            // configuration of db
     user:'khanmohsin3011',
     databases: 'khanmohsin3011',
@@ -21,7 +20,7 @@ app.use(morgan('combined'));
 app.use(bodyParser.json);
 app.use(session({
     secret: 'someRandomSecretValue',
-    cookie: {maxAge :1000 *60 *60*24*30}
+    cookie: {maxAge :1000 *60 *60 *24 *30}
 }));
 
 
