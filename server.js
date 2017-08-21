@@ -2,10 +2,6 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-var Pool = require('pg').Pool;  // to connect to db
-var crypto= require('crypto');   // to encrypt the pwd
-var bodyParser= require('body-parser'); //to understand the body is in JSON 
-var session= require('express-session');    //to maintain session of perticular user 
 var config={                            // configuration of db
     user:'khanmohsin3011',
     databases: 'khanmohsin3011',
@@ -13,6 +9,12 @@ var config={                            // configuration of db
     port: '5432',
     password: process.env.DB_PASSWORD
 };
+
+
+var Pool = require('pg').Pool;  // to connect to db
+var crypto= require('crypto');   // to encrypt the pwd
+var bodyParser= require('body-parser'); //to understand the body is in JSON 
+var session= require('express-session');    //to maintain session of perticular user 
 
 
 var app = express();
