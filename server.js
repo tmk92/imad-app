@@ -1,7 +1,6 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 var config={                            // configuration of db
     user:'khanmohsin3011',
     databases: 'khanmohsin3011',
@@ -9,6 +8,7 @@ var config={                            // configuration of db
     port: '5432',
     password: process.env.DB_PASSWORD
 };
+
 
 
 var Pool = require('pg').Pool;  // to connect to db
